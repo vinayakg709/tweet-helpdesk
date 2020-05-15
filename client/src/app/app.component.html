@@ -1,0 +1,46 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <mat-list>
+      <mat-list-item> <img src="../assets/silogo.svg" alt="Logo" class="logo"> </mat-list-item>
+      <br>
+      <mat-list-item mat-raised-button matTooltip="Twitter Timeline" matTooltipPosition="right">
+        <a routerLink="/twitter_timeline">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">dynamic_feed</mat-icon>
+        </a>
+      </mat-list-item>
+      <mat-list-item mat-raised-button matTooltip="Twitter Mentions" matTooltipPosition="right">
+        <a routerLink="/twitter_mentions">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">loyalty</mat-icon>
+        </a>
+      </mat-list-item>
+
+      <mat-list-item mat-raised-button matTooltip="Tweet from here!" matTooltipPosition="right">
+        <a routerLink="/tweets">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">post_add</mat-icon>
+        </a>
+      </mat-list-item>
+
+    </mat-list>
+
+    <mat-list style="bottom: 0;position: absolute;">
+      <mat-list-item mat-raised-button matTooltip="Settings" matTooltipPosition="right">
+      <a routerLink="/settings">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">post_add</mat-icon>
+      </a>
+    </mat-list-item>
+    <mat-list-item mat-raised-button matTooltip="Profile" matTooltipPosition="right">
+      <a routerLink="/tweets">
+        <img src="../assets/silogo.svg" alt="Logo" class="logo">
+      </a>
+    </mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <div *ngIf="!shouldRun">Please open on Stackblitz to see result</div> -->
