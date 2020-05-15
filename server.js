@@ -12,7 +12,7 @@ var client;
 var twitter = new Twitter({
   consumerKey: '2XVgveSxh2AQl7z8GkypX9bg4',
   consumerSecret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
-  callback: 'http://localhost:3000/callback'
+  callback: 'http://tweet-helpdesk.herokuapp.com/callback'
 });
 
 
