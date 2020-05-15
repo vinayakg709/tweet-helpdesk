@@ -6,7 +6,7 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class TwitterserviceService {
-  api_url = 'http://tweet-helpdesk.herokuapp.com';
+  api_url = 'https://tweet-helpdesk.herokuapp.com';
   constructor(private http: HttpClient ) {}
 
   getTimeline() {

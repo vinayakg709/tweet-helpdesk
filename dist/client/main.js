@@ -537,7 +537,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TwitterserviceService = /** @class */ (function () {
     function TwitterserviceService(http) {
         this.http = http;
-        this.api_url = 'http://tweet-helpdesk.herokuapp.com';
+        this.api_url = 'https://tweet-helpdesk.herokuapp.com';
     }
     TwitterserviceService.prototype.getTimeline = function () {
         return this.http
