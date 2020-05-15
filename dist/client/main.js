@@ -537,7 +537,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TwitterserviceService = /** @class */ (function () {
     function TwitterserviceService(http) {
         this.http = http;
-        this.api_url = 'http://localhost:3000';
+        this.api_url = 'http://tweet-helpdesk.herokuapp.com';
     }
     TwitterserviceService.prototype.getTimeline = function () {
         return this.http
@@ -640,7 +640,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\vinayak\Desktop\Rich panel\client\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\vinayak\Desktop\tweet-helpdesk\client\src\main.ts */"./src/main.ts");
 
 
 /***/ })
