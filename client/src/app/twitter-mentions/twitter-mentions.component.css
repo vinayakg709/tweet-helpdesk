@@ -1,0 +1,226 @@
+mat-card{
+    /* width:0%; */
+    margin-top: 15px;
+    border: #eee 1.5px solid;
+    box-shadow: none !important;
+}
+
+.greyish{
+  color: rgb(197, 196, 196);
+}
+.divider{
+  border: #eee 1.5px solid;
+  /* height:90vh; */
+  margin-top: 15px;
+  height: 81vh;
+}
+
+.header-info{
+  padding: 7px 8px;
+  font-size: 12px;
+  border-bottom:  #eee 1.5px solid;
+  margin:auto 2px ;
+}
+
+.mention-image{
+  height: 24px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.dnt{
+  margin: 15px 25px;
+  font-size: 12px;
+}
+
+.attachment{
+  height: 70px;
+  width: auto;
+  border-radius: 13px;
+  padding: 10px 10px;
+  margin-left: 5px;
+}
+
+.msgs{
+  border-bottom: none !important;
+}
+
+.create-task{
+  background-color: rgb(241, 241, 241);
+  padding: auto 10px !important;
+  border : none;
+  border-radius: 12px;
+}
+
+.rply{
+    bottom: 0;
+    left: 0;
+    right: 0;
+  position: absolute;
+}
+
+input{
+  font-size: 12px !important;
+  padding: 20px 15px !important;
+}
+.btn{
+  padding: 0.3rem 0.75rem !important;
+  border-color: #ced4da;
+}
+
+
+.user-part{
+  border-left: none !important;
+}
+
+
+mat-card-title{
+    margin: 0px 0px 0px !important;
+}
+
+.avatar{
+    height: 26px;
+    width: auto;
+    margin-left: 10px;
+}
+
+.truncate-overflow {
+    font-size: 13px !important;
+    --max-lines: 2;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+  }
+
+  .truncate-overflow::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .truncate-overflow::after .truncate-overflow-name::after  {
+    content: "";
+    position: absolute;
+    right: 0; /* note: not using bottom */
+    width: 1rem;
+    height: 1rem;
+    background: white;
+  }
+
+
+  
+.truncate-overflow-name {
+    --max-lines: 1;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+  }
+
+  .truncate-overflow-name::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  
+
+.title{
+    font-weight: 500;
+}
+
+mat-card-content{
+    margin-left: 25px;
+}
+
+/* User Panel */
+
+.profile-image{
+  margin-top: 30px;
+  height: 70px;
+  width: auto;
+  border-radius: 50%;
+}
+
+.profile-name{
+  font-size: 14px;
+}
+
+.profile-username{
+  font-size: 12px;
+}
+
+.follower{
+  background-color: rgb(241, 241, 241);
+  padding: 1px 15px;
+  font-size: 12px;
+  border-radius: 12px;
+  /* margin: 1px 3px; */
+}
+
+table{
+  font-size: 12px;
+}
+
+.table td{
+  padding: 0rem !important;
+}
+
+.tasks{
+  font-size: 12px;
+  bottom: 0;
+    left: 0;
+    right: 0;
+  position: absolute;
+  border-top: #eee 1.5px solid ;
+  padding-top: 10px;
+}
+
+.search{
+  padding: 0px 10px !important;
+  height: 25px;
+  border-radius: 25px;
+  border: 1px rgb(207, 205, 205) solid;
+}
+
+.filter{
+  padding: 0px 20px !important;
+  height: 25px;
+  border-radius: 25px;
+  /* border: 1px rgb(207, 205, 205) solid; */
+  border: none;
+  font-size: 12px;
+}
+
+.material-icons{
+  font-size: 14px;
+}
+
+.online{
+  margin-right: 10%;
+}
+
+
+
+.scrollable{
+  overflow-y: scroll;
+  height: 81vh;
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(219, 218, 218); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(163, 163, 163); 
+}

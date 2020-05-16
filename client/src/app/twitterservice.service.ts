@@ -1,0 +1,52 @@
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { HttpClient} from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TwitterserviceService {
+  api_url = 'https://tweet-helpdesk.herokuapp.com';
+  constructor(private http: HttpClient ) {}
+
+  getTimeline() {
+    return this.http
+      .get<any[]>(this.api_url+'/home_timeline')
+      .pipe(map(data => data));
+
+  }
+
+  getMentions() {
+    return this.http
+      .get<any[]>(this.api_url+'/mentions_timeline')
+      .pipe(map(data => data));
+
+  }
+
+  getStatusShow(id:any) {
+    return this.http
+      .get<any[]>(this.api_url+'/statuses/show/' + id)
+      .pipe(map(data => data));
+
+  }
+
+  getUser() {
+    return this.http
+      .get<any[]>(this.api_url+'/users/show')
+      .pipe(map(data => data));
+
+  }
+
+  tweet(tweetdata: string) {
+    return this.http.post<any>(`${this.api_url}/post_tweet/`, { status: tweetdata})
+        .pipe(map(tweet => {
+         
+            alert("tweet posted")
+
+            return tweet;
+        }));
+}
+
+
+
+}

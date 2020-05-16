@@ -1,0 +1,440 @@
+<!-- <ng-container *ngIf="er == false"> -->
+
+
+<div class="row ml-2">
+  <h2>Tweeter Mentions</h2>
+  <input type="text " class="search my-auto mx-4" placeholder="&#xF002;   Quick Search"
+    style="font-family:Arial, FontAwesome">
+  <button class="filter my-auto"><i class='fa fa-filter mr-2'></i>Filter</button>
+
+  <button class="filter my-auto ml-auto online"><i class='fa fa-circle mr-2' style="color: green;"></i>Online <i
+      class='fa fa-caret-down ml-1'></i></button>
+
+</div>
+
+<div class="row">
+
+
+  <div class="col-3 scrollable" >
+    <div *ngIf="undefined === myMentions">Loading...</div>
+    <ng-container *ngIf="undefined !== myMentions">
+    <ng-container *ngFor="let tweets of myMentions.data">
+      <a (click)="getInfo(tweets)">
+      <mat-card matRipple [matRippleColor]="greyish">
+        <div class="row">
+          <div class="align-self-start">
+            <img class="avatar" mat-card-avatar [src]="tweets.user.profile_image_url">
+          </div>
+          <div class="align-self-start" style="margin-left: 25px;">
+            <div class="title  truncate-overflow-name">
+              {{tweets.user.screen_name}}
+            </div>
+          </div>
+          <div style="margin-left: 60px;margin-right: 10px;" class="truncate-overflow">
+            {{tweets.full_text}} This is real mention.
+          </div>
+        </div>
+      </mat-card>
+    </a>
+    </ng-container>
+  </ng-container>
+
+  <mat-card matRipple [matRippleColor]="greyish">
+    <div class="row">
+      <div class="align-self-start">
+        <img class="avatar" mat-card-avatar src="../../assets/dummyimg2.jpeg">
+      </div>
+      <div class="align-self-start" style="margin-left: 25px;">
+        <div class="title  truncate-overflow-name">
+          Tsutsui Ichichia
+        </div>
+      </div>
+      <div style="margin-left: 60px;margin-right: 10px;" class="truncate-overflow">
+        This is Dummy text.
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card matRipple [matRippleColor]="greyish">
+    <div class="row">
+      <div class="align-self-start">
+        <img class="avatar" mat-card-avatar src="../../assets/dummyimg3.jpeg">
+      </div>
+      <div class="align-self-start" style="margin-left: 25px;">
+        <div class="title  truncate-overflow-name">
+          Vicente De la Cruz
+        </div>
+      </div>
+      <div style="margin-left: 60px;margin-right: 10px;" class="truncate-overflow">
+        This is Dummy Card.
+      </div>
+    </div>
+  </mat-card>
+
+
+  <mat-card matRipple [matRippleColor]="greyish">
+    <div class="row">
+      <div class="align-self-start">
+        <img class="avatar" mat-card-avatar src="../../assets/dummyimg.jpg">
+      </div>
+      <div class="align-self-start" style="margin-left: 25px;">
+        <div class="title  truncate-overflow-name">
+          Vicente De la Cruz
+        </div>
+      </div>
+      <div style="margin-left: 60px;margin-right: 10px;" class="truncate-overflow">
+        Hello Dear, Sorry for Inconviniences.
+      </div>
+    </div>
+  </mat-card>
+
+  <mat-card matRipple [matRippleColor]="greyish">
+    <div class="row">
+      <div class="align-self-start">
+        <img class="avatar" mat-card-avatar src="../../assets/dummyimg2.jpeg">
+      </div>
+      <div class="align-self-start" style="margin-left: 25px;">
+        <div class="title  truncate-overflow-name">
+          LienZeal Bowman
+        </div>
+      </div>
+      <div style="margin-left: 60px;margin-right: 10px;" class="truncate-overflow">
+        Thanks.
+      </div>
+    </div>
+  </mat-card>
+
+  
+  </div>
+
+  <ng-container *ngIf="undefined === myInfo">
+  <div class="col-6" style="padding-right: 0px;">
+    <div class="divider center-part ">
+
+      <div class="row header-info">
+        <div class="col-1" style="padding-right: 0;">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-3 font-weight-bold" style="padding-left: 2px;">
+          Ean Tipene <i class='fa fa-circle ml-1' style="color: green;font-size: 8px;"></i>
+        </div>
+        <div class="col-2 greyish">
+          Room: 102
+        </div>
+        <div class="col-3 greyish">
+          Oct 1 - Oct 2
+        </div>
+        <div class="col-3">
+          <button class="create-task"> Create a Task </button>
+        </div>
+      </div>
+
+      <div class="row greyish dnt">
+        Today
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1" style="padding-right: 0;">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-9" style="padding-left: 2px;">
+          Hi there!
+          <br>
+          I have a problem in by room it needs to be cleaned.
+          <div class="row">
+            <img src="../../assets/attach1.jpg" alt="Attchment" class="attachment">
+            <img src="../../assets/attach2.jpg" alt="Attchment" class="attachment">
+            <img src="../../assets/attach3.jpg" alt="Attchment" class="attachment">
+          </div>
+          This is what I see! Not Good!
+        </div>
+        <div class="col-2 greyish">
+          10:34
+        </div>
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1">
+          <img src="../../assets/technology.svg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-11 greyish" style="padding-left: 2px;">
+         <span style="color: red;">Ann Tilbusk</span> (you)assigned to this conevrsation.
+        </div>
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-9" style="padding-left: 2px;">
+          Hello Dear Ea!
+          <br>
+          Sorry for Inconviniences. I am sending our manager Maria Peterson to your room 102.
+        </div>
+        <div class="col-2 greyish">
+          10:36
+        </div>
+      </div>
+
+      <div class="header-info msgs row rply">
+        <div class="col-1">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="input-group col-11" style="padding-left: 2px;">
+          <input type="text" class="form-control" placeholder="Reply..." aria-label="Reply..."
+            aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary attbtn" type="button">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">post_add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+  </div>
+
+
+
+
+  <div class="col-2" style="padding-left: 0px;">
+    <div class="divider user-part">
+
+      <div class="row mx-auto">
+        <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="profile-image mx-auto">
+      </div>
+
+      <div class="row mt-2">
+        <div class="text-center mx-auto profile-name font-weight-bold">Ean Tipene</div>
+      </div>
+
+      <div class="row">
+        <div class="text-center mx-auto profile-username" style="color: lightgreen;">online</div>
+      </div>
+
+      <div class="row mt-3 pr-4 pl-4">
+        <div class="call follower mx-auto">
+          <i class='fa fa-phone mr-1'></i> Call
+        </div>
+        <div class="mail follower mx-auto">
+          <i class='fa fa-envelope mr-1'></i> Email
+        </div>
+      </div>
+
+      <div class="row pr-4 pl-4 mt-3">
+        <table class="table table-borderless mx-auto">
+          <tbody>
+            <tr>
+              <td class="greyish">Room</td>
+              <td class="float-right">102</td>
+            </tr>
+            <tr>
+              <td class="greyish">Category</td>
+              <td class="float-right">Standard</td>
+            </tr>
+            <tr>
+              <td class="greyish">Country</td>
+              <td class="float-right">Canada</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tasks pr-3 pl-3 mb-2">
+        Tasks
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Change up room.</label>
+        </div>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Change linen and Towel when guest out. </label>
+        </div>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Bring Complementary Bottel of Red Wine.</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+
+
+<!-- -------------------------------------------------------------------------------------- -->
+
+
+<ng-container *ngIf="undefined !== myInfo">
+  <div class="col-6" style="padding-right: 0px;">
+    <div class="divider center-part">
+
+      <div class="row header-info">
+        <div class="col-1" style="padding-right: 0;">
+          <img [src]="myInfo.user.profile_image_url" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-3 font-weight-bold" style="padding-left: 2px;">
+          {{ myInfo.user.name }}
+        </div>
+        <div class="col-2 greyish">
+          {{ myInfo.user.screen_name }}
+        </div>
+        <div class="col-3">
+        </div>
+        <div class="col-3">
+          <button class="create-task"> Create a Task </button>
+        </div>
+      </div>
+
+      <div class="row dnt greyish">
+        {{ date }}
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1" style="padding-right: 0;">
+          <img [src]="myInfo.user.profile_image_url" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-9 font-weight-bold" style="padding-left: 2px;">
+          {{ myInfo.full_text }}
+          <br>
+          <ng-container *ngFor="let hashtag of myInfo.entities.hashtags" style="color: lightskyblue;">
+            #{{ hashtag.text }} <br>
+          </ng-container>
+
+          <ng-container *ngFor="let url of myInfo.entities.urls">
+            <a [href]="url.display_url">{{ url.display_url }} <br></a>
+          </ng-container>
+
+          <div class="row">
+            <ng-container *ngFor="let med of myInfo.entities.media">
+              <img [src]="med.media_url" alt="Attchment" class="attachment">
+            </ng-container>
+          </div>
+          This is what I see! Looks Good!
+        </div>
+        <div class="col-2 font-weight-bold">
+          {{ time}}
+
+        </div>
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1">
+          <img src="../../assets/technology.svg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-11 greyish" style="padding-left: 2px;">
+          <span style="color: red;">Ann Tilbusk</span>(you) assigned to this conevrsation.
+        </div>
+      </div>
+
+      <div class="row header-info msgs">
+        <div class="col-1">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="col-9" style="padding-left: 2px;">
+          Hello Dear Ea!
+          <br>
+          Sorry for Inconviniences. I am sending our manager Maria Peterson to your room 102.
+        </div>
+        <div class="col-2 greyish">
+          10:36
+        </div>
+      </div>
+
+      <div class="row header-info msgs rply">
+        <div class="col-1">
+          <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+        </div>
+        <div class="input-group col-11" style="padding-left: 2px;">
+          <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary attbtn" type="button">
+              <mat-icon aria-hidden="false" aria-label="Example home icon">post_add</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <div class="col-2" style="padding-left: 0px;">
+    <div class="divider user-part">
+
+      <div class="row mx-auto">
+        <img [src]="myInfo.user.profile_image_url" alt="Mention-image" class="profile-image mx-auto">
+      </div>
+
+      <div class="row mt-2">
+        <div class="text-center mx-auto profile-name font-weight-bold">{{ myInfo.user.name }}</div>
+      </div>
+
+      <div class="row">
+        <div class="text-center mx-auto profile-username">{{ myInfo.user.screen_name }}</div>
+      </div>
+
+      <div class="row mt-3 pr-4 pl-4">
+        <div class="call follower mx-auto mt-1">
+          {{ myInfo.user.followers_count }} Followers
+        </div>
+        <div class="mail follower mx-auto mt-1">
+         <span> {{ myInfo.user.friends_count }}</span> Friends
+        </div>
+      </div>
+
+      <div class="row pr-4 pl-4 mt-3">
+        <table class="table table-borderless mx-auto">
+          <tbody>
+            <tr>
+              <td class="greyish">Created on</td>
+              <td class="float-right">{{userdate}}</td>
+            </tr>
+            <tr>
+              <td class="greyish">Following</td>
+              <ng-container *ngIf = "myInfo.user.following == true">
+                <td class="float-right">Yes</td>
+              </ng-container>
+              <ng-container *ngIf = "myInfo.user.following != true">
+                <td class="float-right">No</td>
+              </ng-container>
+            </tr>
+            <tr>
+              <td class="greyish">Country</td>
+              <td class="float-right">India</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tasks pr-3 pl-3 mb-2">
+        Tasks
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Change up room.</label>
+        </div>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Change linen and Towel when guest out. </label>
+        </div>
+        <br>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+          <label class="form-check-label" for="inlineCheckbox1">Bring Complementary Bottel of Red Wine.</label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ng-container>
+</div>
+
+<!-- </ng-container> -->
