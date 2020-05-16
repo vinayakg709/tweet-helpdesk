@@ -10,8 +10,47 @@
                 });
             });
         </script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <style>
+            .card{
+                margin: 4% 35%;
+                padding: 1%;
+                border: #00acee 1.5px solid !important;
+                border-radius: 20px;
+                box-shadow: 0 1px 1px #83d2f1, 0 0 2px #83d2f1 !important;
+            }
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            .forImg{
+                height: 40vh;
+                width: 40vh;
+            }
+            .btn{
+                border-radius: 25px;
+                background-color: #00acee;
+                background-image: linear-gradient(19deg, #00acee 0%, rgb(52, 97, 245) 100%);
+                height: 50px;
+                font-weight: bold;
+            }
+
+            
+        </style>
     </head>
     <body>
-        <button id="sign-in-with-twitter">Sign in with Twitter!</button>
+        <div class="card shadow">
+            <div class="mx-auto h3 mt-3">
+                LOGIN to Tweet HelpDesk!
+            </div>
+            <div class="forImg mx-auto mt-4">
+                <img src="https://abs.twimg.com/sticky/illustrations/twitter_login_sidebar_illustration.png" alt="Twitter Login Image" class="loginImg">
+            </div>
+            <div class="h5 mx-auto my-4 text-center">
+                See What's happening the world right now.Manage your all tweets without leaving your helpdesk.
+            </div>
+            
+            <button id="sign-in-with-twitter" class="btn btn-primary mx-5 mt-2 mb-4">Sign in with Twitter!</button>
+        </div>
     </body>
 </html>
