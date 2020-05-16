@@ -5,8 +5,6 @@ var Twitter = require("node-twitter-api");
 var path = require('path');
 const app = express();
 
-var myaccessToken;
-var myaccessTokenSecret;
 var client;
 
 var twitter = new Twitter({
@@ -16,18 +14,20 @@ var twitter = new Twitter({
 });
 
 
-
 app.use(require('cors')());
 app.use(require('body-parser').json());
 app.use(express.static(__dirname + '/dist/client'));
 
 var _requestSecret;
 
+// Login Url
 
 app.get('/login', function (request, res) {
   res.sendFile(path.join(__dirname + '/login.html'));
 
 });
+
+// Getting Request Token
 
 app.get("/request-token", function (req, res) {
   twitter.getRequestToken(function (err, requestToken, requestSecret) {
@@ -39,6 +39,8 @@ app.get("/request-token", function (req, res) {
     }
   });
 });
+
+// Getting Access Token and Access Secret Token
 
 app.get("/access-token", function (req, res) {
   var requestToken = req.query.oauth_token,
@@ -52,29 +54,28 @@ app.get("/access-token", function (req, res) {
         if (err)
           res.status(500).send(err);
         else
-        res.send(user);
+          res.send(user);
         console.log(user);
-        
+
         client = new Twitt({
           consumer_key: '2XVgveSxh2AQl7z8GkypX9bg4',
           consumer_secret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
           access_token: accessToken,
           access_token_secret: accessSecret
-        
-        });
 
-        
-       
-        
+        });
 
       });
   });
 });
 
+// Getting callback Url
+
 app.get('/callback', function (request, res) {
   res.sendFile(path.join(__dirname + '/callback.html'));
 });
 
+// Getting latest timeline
 
 app.get('/home_timeline', (req, res) => {
   const params = { tweet_mode: 'extended', count: 15 };
@@ -91,6 +92,8 @@ app.get('/home_timeline', (req, res) => {
 
 });
 
+// Getting Mentions Timeline
+
 app.get('/mentions_timeline', (req, res) => {
   const params = { tweet_mode: 'extended', count: 10 };
 
@@ -105,6 +108,8 @@ app.get('/mentions_timeline', (req, res) => {
     });
 
 });
+
+// Posting Tweet
 
 app.post('/post_tweet', (req, res) => {
 
@@ -125,11 +130,13 @@ app.post('/post_tweet', (req, res) => {
 });
 
 
+// Calling angular client side
+
 app.use('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/client/index.html'));
 });
 
 
-
+// Running server
 
 app.listen(process.env.PORT || 3000, () => console.log('Server running'));
