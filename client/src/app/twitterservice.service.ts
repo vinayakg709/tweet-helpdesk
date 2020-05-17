@@ -47,6 +47,18 @@ export class TwitterserviceService {
 
   }
 
+  postreply(reply :any) {
+    
+    return this.http
+      .post<any>(this.api_url+'/tweets/reply', reply)
+      .pipe(map(data => {
+        alert('tweeted')
+
+        return data
+      }));
+
+  }
+
   tweet(tweetdata: string) {
     return this.http.post<any>(`${this.api_url}/post_tweet/`, { status: tweetdata})
         .pipe(map(tweet => {

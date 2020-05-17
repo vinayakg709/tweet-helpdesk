@@ -13,3 +13,8 @@
 .dnt{
     font-size: 12px;
 }
+
+.loader{
+    height: 100px;
+    margin: auto;
+  }

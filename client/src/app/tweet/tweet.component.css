@@ -20,3 +20,8 @@
     color: white;
     width: 40%;
 }
+
+.loader{
+    height: 100px;
+    margin: auto;
+  }

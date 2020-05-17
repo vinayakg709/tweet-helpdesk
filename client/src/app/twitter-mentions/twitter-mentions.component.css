@@ -230,5 +230,11 @@ table{
 
 .scrollablecenter{
   overflow-y: scroll;
-  height: 46vh;
+  /* position: absolute; */
+  height: 68vh;
+}
+
+.loader{
+  height: 100px;
+  margin: auto;
 }

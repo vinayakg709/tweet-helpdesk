@@ -117,7 +117,7 @@ app.get('/mentions_timeline', (req, res) => {
 
 });
 
-
+// search get replies
 
 app.get('/search/tweets', (req, res) => {
   var parts = url.parse(req.url, true);
@@ -128,6 +128,25 @@ app.get('/search/tweets', (req, res) => {
  })
 
 });
+
+// search post replies
+
+app.post('/tweets/reply', (req, res) => {
+  reply = req.body;
+
+   client.post('statuses/update',{ in_reply_to_status_id: reply.id, status: "@"+reply.username +" " + reply.status })
+   .then(result => {
+     console.log(result);
+     res.send(result);
+     
+   }).catch(err =>{
+     console.log(err);
+   })
+ })
+
+// });
+
+
 
 // Posting Tweet
 

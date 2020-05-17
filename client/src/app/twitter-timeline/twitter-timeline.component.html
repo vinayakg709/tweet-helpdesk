@@ -1,5 +1,7 @@
 <h2>Tweeter Timeline</h2>
-<div *ngIf="undefined === myTimeline">Loading...</div>
+<div *ngIf="undefined === myTimeline" class="text-center">
+  <img src="../../assets/loader.svg" alt="loader" class="loader mx-auto">
+</div>
 <div *ngIf="undefined !== myTimeline">
 
   <!-- For All tweets  -->
