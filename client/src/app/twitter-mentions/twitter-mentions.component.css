@@ -224,3 +224,11 @@ table{
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(163, 163, 163); 
 }
+
+
+
+
+.scrollablecenter{
+  overflow-y: scroll;
+  height: 46vh;
+}

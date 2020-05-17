@@ -18,12 +18,16 @@ export class TwitterMentionsComponent implements OnInit {
   userdate: any;
   usertime : any;
   er = true;
+  myreplies :any;
+  mySearch:any;
+  loadingRep = true;
   constructor(private api: TwitterserviceService) { }
 
   ngOnInit() {
     this.getTwitterMentions();
     // this.getTwitterStatus(this.id);
     // console.log(this.id);
+    // this.getSearchReplies();
   }
 
   getTwitterMentions(): void {
@@ -59,6 +63,46 @@ export class TwitterMentionsComponent implements OnInit {
      this.usertime = this.userdata[3].substring(0,5);
     
 
+   }
+
+
+   getSearchReplies(id:any,screen_name:any): void {
+     this.loadingRep = true;
+    this.myreplies = [];
+    var param = {
+      q : screen_name,
+      since_id : id
+    }
+    console.log(param);
+    this.api.getsearch(param)
+      .subscribe(
+        mySearch => {
+          // this.er = false;
+          this.mySearch = mySearch;
+          console.log(this.mySearch);
+          console.log(this.mySearch.statuses.length);
+          
+          for(var i=0;i< this.mySearch.statuses.length;i++){
+            if(this.mySearch.statuses[i].in_reply_to_status_id_str == id){
+              console.log(this.mySearch.statuses[i]);
+              if(!this.myreplies.includes(this.mySearch.statuses[i])){
+                this.myreplies.push(this.mySearch.statuses[i]);
+                this.loadingRep = false;
+              }
+            }
+          }
+          if(this.myreplies.length == 0){
+            this.loadingRep = false;
+          }
+          
+        }, err =>{
+          if(err.status == 500){
+            window.location.href= "/login";
+
+          }
+          console.log(err);
+        }
+      )
    }
 
    

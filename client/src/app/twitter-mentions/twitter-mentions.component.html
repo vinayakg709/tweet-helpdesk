@@ -19,7 +19,7 @@
 
     <ng-container *ngIf="undefined !== myMentions">
       <ng-container *ngFor="let tweets of myMentions.data">
-        <a (click)="getInfo(tweets)">
+        <a (click)="getInfo(tweets)" (click)=" getSearchReplies(tweets.id_str,tweets.user.screen_name)">
           <mat-card matRipple [matRippleColor]="greyish">
             <div class="row">
               <div class="align-self-start">
@@ -327,23 +327,30 @@
             <img src="../../assets/technology.svg" alt="Mention-image" class="mention-image">
           </div>
           <div class="col-11 greyish" style="padding-left: 2px;">
-            <span style="color: red;">Ann Tilbusk</span>(you) assigned to this conevrsation.
+            Replies to the tweet.
           </div>
         </div>
+        <div class="scrollablecenter">
+        <ng-container *ngIf = "loadingRep">
+          loading
+        </ng-container>
 
+        <ng-container *ngFor="let reply of myreplies" >
         <div class="row header-info msgs">
           <div class="col-1">
-            <img src="../../assets/dummyimg.jpg" alt="Mention-image" class="mention-image">
+            <img [src]="reply.user.profile_image_url" alt="Mention-image" class="mention-image">
           </div>
           <div class="col-9" style="padding-left: 2px;">
-            Hello Dear Ea!
+            {{ reply.user.screen_name}}
             <br>
-            Sorry for Inconviniences. I am sending our manager Maria Peterson to your room 102.
+            {{ reply.text }}
           </div>
           <div class="col-2 greyish">
-            10:36
+            {{ reply.created_at.split(' ')[3].substring(0,5) }}
           </div>
         </div>
+      </ng-container>
+    </div>
 
         <div class="row header-info msgs rply">
           <div class="col-1">
