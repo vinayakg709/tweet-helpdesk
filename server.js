@@ -14,12 +14,12 @@ var twitter = new Twitter({
   callback: 'https://tweet-helpdesk.herokuapp.com/callback'
 });
 
-client = new Twitt({
-  consumer_key: '2XVgveSxh2AQl7z8GkypX9bg4',
-  consumer_secret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
-  access_token: "2983080726-8sfihuoHpjj4MiXzbTSr7kDGpqjVrQUlErxNSK6",
-  access_token_secret: "h3uyxTBGP7XEsHqJPSURtgD6LJPLwrGuhBFyGLJyUQpxL"
-});
+// client = new Twitt({
+//   consumer_key: '2XVgveSxh2AQl7z8GkypX9bg4',
+//   consumer_secret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
+//   access_token: "2983080726-8sfihuoHpjj4MiXzbTSr7kDGpqjVrQUlErxNSK6",
+//   access_token_secret: "h3uyxTBGP7XEsHqJPSURtgD6LJPLwrGuhBFyGLJyUQpxL"
+// });
 
 
 app.use(require('cors')());
@@ -65,13 +65,13 @@ app.get("/access-token", function (req, res) {
           res.send(user);
         console.log(user);
 
-        // client = new Twitt({
-        //   consumer_key: '2XVgveSxh2AQl7z8GkypX9bg4',
-        //   consumer_secret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
-        //   access_token: accessToken,
-        //   access_token_secret: accessSecret
+        client = new Twitt({
+          consumer_key: '2XVgveSxh2AQl7z8GkypX9bg4',
+          consumer_secret: 'OMBwJUlQQsVhoFrNjhQTB82sJUoNat6XOOqKwelqp3F98UPBqa',
+          access_token: accessToken,
+          access_token_secret: accessSecret
 
-        // });
+        });
 
       });
   });
